@@ -20,14 +20,17 @@ public class Co2Emission implements Serializable {
 	private Long id ; 
 	private String year ; 
 	private String country ;
+	private double co2EmissionKt ; 
 	private boolean approuved ; 
 	
 	@ManyToOne
 	private DataScientist dataScientist ; 
 	
-	public Co2Emission(String year, String country) {
+	public Co2Emission(String year, String country, double co2data , boolean approuved) {
 		this.year = year;
 		this.country = country;
+		this.approuved = approuved ; 
+		this.co2EmissionKt = co2data ; 
 	}
 	
 	public Co2Emission() {}
@@ -63,6 +66,14 @@ public class Co2Emission implements Serializable {
 	
 	public DataScientist getDataScientist() {
 		return dataScientist;
+	}
+
+	public double getCo2EmissionKt() {
+		return co2EmissionKt;
+	}
+
+	public void setCo2EmissionKt(double co2EmissionKt) {
+		this.co2EmissionKt = co2EmissionKt;
 	}
 	
 
